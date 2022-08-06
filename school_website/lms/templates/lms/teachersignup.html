@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+    	body {
+    		color: #aa082e;
+    			background-color:#96a6ff;
+    		font-family: 'Roboto', sans-serif;
+    	}
+        .form-control {
+    		border-color: #eee;
+            min-height: 41px;
+    		box-shadow: none !important;
+    	}
+        .form-control:focus {
+    		border-color: #5cd3b4;
+    	}
+        .form-control, .btn {
+            border-radius: 3px;
+        }
+    	.signup-form {
+    		width: 500px;
+    		margin: 0 auto;
+    		padding: 30px 0;
+			
+    	}
+        .signup-form h2 {
+    		color: #333;
+            margin: 0 0 30px 0;
+    		display: inline-block;
+    		padding: 0 30px 10px 0;
+    	    border-bottom: 3px solid #ffffff;
+        }
+        .signup-form form {
+    		color: #999;
+    		border-radius: 3px;
+        	margin-bottom: 15px;
+            background: #fff;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+			
+        }
+	 	.signup-form .form-group {
+    		margin-bottom: 20px;
+			margin-left: 115px;
+    	}
+    	.signup-form label {
+    		font-weight: normal;
+    		font-size: 13px;
+    	}
+        .signup-form input[type="checkbox"] {
+    		margin-top: 2px;
+    	}
+        .signup-form .btn {
+            font-size: 16px;
+            font-weight: bold;
+    		border: none;
+    		margin-top: 20px;
+    		min-width: 140px;
+        }
+    	.signup-form .btn:hover, .signup-form .btn:focus {
+    		background: #41cba9;
+            outline: none !important;
+    	}
+        .signup-form a {
+    		color: #2b04ff;
+
+    		text-decoration: underline;
+    	}
+    	.signup-form a:hover {
+    		text-decoration: none;
+    	}
+        .signup-form form a {
+    		color: #5cd3b4;
+    		text-decoration: none;
+    	}
+    	.signup-form form a:hover {
+    		text-decoration: underline;
+    	}
+		.signup-form .btn {
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    margin-top: 20px;
+    min-width: 172px;
+	margin-bottom: 15px;
+}
+
+    </style>
+
+</head>
+<body>
+	<svg xmlns="http://www.w3.org/2000/svg" width="16" height="26" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16" style="color: black;">
+		<path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+	  </svg>
+	<a href="/" class="home"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-house" viewBox="0 0 16 16">
+		<path fill-rule="evenodd" d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
+		<path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
+	  </svg></a>
+    <div class="signup-form">
+        <form  method="post" class="form-horizontal">
+
+    			<center><h2>Student Signup</h2></center>
+
+{% csrf_token %}
+
+            {% for field in form1 %}
+            <div class="form-group text-center">
+              <label class="control-label col-xs-4">{{ field.label_tag }}</label>
+              <div class="col-xs-8">
+              {{ field }}
+               </div>
+            </div>
+            {% endfor %}
+            {% for field in form2 %}
+            <div class="form-group text-center">
+              <label class="control-label col-xs-4">{{ field.label_tag }}</label>
+              <div class="col-xs-8">
+              {{ field }}
+               </div>
+            </div>
+            {% endfor %}
+
+    		<div class="form-group text-center">
+    			<div class="col-xs-8 col-xs-offset-4">
+            <button type="submit" class="btn btn-primary btn-lg" style="border-radius: 0%;">Sign Up</button><br>
+			<a href="{% url 'lms:tlogin' %}" style="color: #5cd3b4; margin-top: 10px;">Already a User? Login</a>
+    			</div>
+    		</div>
+        </form>
+    	
+    </div>
+
+
+
+</body>
+</html>
