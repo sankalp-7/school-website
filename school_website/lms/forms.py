@@ -5,12 +5,14 @@ from django.contrib.auth.models import User
 from django.contrib.auth import get_user_model
 
 class StudentUserForm(forms.ModelForm):
+    #basic user creation form
     class Meta:
         User = get_user_model()
         model=User
         fields=['first_name','last_name','username','password']
 
 class StudentExtraForm(forms.ModelForm):
+   #extra details of students
     class Meta:
         model=models.student
         fields=['standard','section','stream','roll_no']
@@ -21,6 +23,8 @@ class TeacherUserForm(forms.ModelForm):
         fields=['first_name','last_name','username','password']
 
 class TeacherExtraForm(forms.ModelForm):
+   
+#extra teacher details
     class Meta:
         model=models.teacher
         fields=['subject','class_taught','contact_number']
