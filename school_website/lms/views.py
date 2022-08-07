@@ -95,6 +95,10 @@ def teachersuccess(request):
     obj=teacher.objects.get(pk=id)
     print(obj)
     return render(request,'lms/teacherprofile.html',{"obj":obj})
+def logout(request):
+    return render(request,'lms/loggedout.html')
+def logout1(request):
+    return render(request,'lms/loggedout1.html')
 def viewstudents(request):
     obj=student.objects.all()
     return render(request,'lms/viewstudents.html',{"obj":obj})
