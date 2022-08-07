@@ -1,5 +1,5 @@
 from django.urls import path
-from.views import home,studentlogin,teacherlogin,studentsignup_view,studentsuccess,teachersignup_view,teachersuccess
+from.views import home,studentlogin,teacherlogin,studentsignup_view,studentsuccess,teachersignup_view,teachersuccess,viewstudents
 app_name='lms'
 
 urlpatterns=[ 
@@ -10,4 +10,5 @@ urlpatterns=[
     path('teachersignup/',teachersignup_view,name='teachersignup'),
     path('success/',studentsuccess,name='ssuccess'),
     path('tsuccess/',teachersuccess,name='tsuccess'),
+     path('viewstudents/',viewstudents,name='view'),
 ]
